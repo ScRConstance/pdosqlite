@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PDO SQLite DATABASE MANAGEMENT</title>
+		<link href="http://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h1>PDO SQLite DATABASE MANAGEMENT</h1>
+            </div>
+
+            <table class="table table-bordered">
+                <tbody>
+                    <?php if ($gvar['tblname'] == 'projects') { ?>
+                        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method='POST'>
+                        <tr>
+                            <td><label>Project ID</label><br><input type='text' name='project_id' value="<?php echo $proj[0][':project_id'] ?>" readonly /></td>
+                        </tr>
+                        <tr>
+                            <td><label>Project Name</label><br><input type='text' name='project_name' value="<?php echo $proj[0][':project_name'] ?>" /></td>
+                        </tr>
+                        <tr>
+                            <td><a style='text-decoration:none' href="<?php echo $_SERVER['PHP_SELF'] ?>"><font style="font-weight:bold">&#10007;</font> cancel</a> <input type='submit' name='submit' value='edit' /></td>
+                        </tr>
+                        </form>
+                    <?php } ?>
+		            <?php if ($gvar['tblname'] == 'tasks' && $gvar['tag'] == 'edit') { ?>
+	                    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method='POST'>
+	                    <tr>
+	                        <td><label>Task ID</label><br><input type='text' name='task_id' value="<?php echo $task[0][':task_id'] ?>" readonly /></td>
+                        </tr>
+                        <tr>
+	                        <td><label>Task Name</label><br><input type='text' name='task_name' value="<?php echo $task[0][':task_name'] ?>" /></td>
+                        </tr>
+                        <tr>
+	                        <td><label>Task Start Date</label><br><input type='text' name='start_date' value="<?php echo $task[0][':start_date'] ?>" /></td>
+                        </tr>
+                        <tr>
+	                        <td><label>Task Completed Date</label><br><input type='text' name='completed_date' value="<?php echo $task[0][':completed_date'] ?>" /></td>
+                        </tr>
+                        <tr>
+	                        <td><label>Task is Completed</label><br><input type='radio' name='completed' id='check' value="<?php echo $task[0][':completed'] ?>"><label>&#10003; completed</label> <input type='radio' name='completed' id='cross' value="<?php echo $task[0][':completed'] ?>" checked><label>&#10007; not complete</label></td>
+                        </tr>
+                        <tr>
+	                        <td><label>Task's Project ID</label><br><input type='text' name='project_id' value="<?php echo $task[0][':project_id'] ?>" /></td>
+                        </tr>
+                        <tr>
+	                        <td><a style='text-decoration:none' href="<?php echo $_SERVER['PHP_SELF'] ?>"><font style="font-weight:bold">&#10007;</font> cancel</a> <input type='submit' name='submit' value='edit' /></td>
+	                    </tr>
+	                    </form>
+	                <?php } ?>
+		            <?php if ($gvar['tblname'] == 'tasks' && $gvar['tag'] == 'add') { ?>
+	                    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method='POST'>
+	                    <tr>
+	                        <td><label>Task ID</label><br><input type='text' name='task_id' value="" disabled /></td>
+                        </tr>
+                        <tr>
+	                        <td><label>Task Name</label><br><input type='text' name='task_name' value="" /></td>
+                        </tr>
+                        <tr>
+	                        <td><label>Task Start Date</label><br><input type='text' name='start_date' value="" /></td>
+                        </tr>
+                        <tr>
+	                        <td><label>Task Completed Date</label><br><input type='text' name='completed_date' value="" /></td>
+                        </tr>
+                        <tr>
+	                        <td><label>Task is Completed</label><br><input type='radio' name='completed' id='check' value="1"><label>&#10003; completed</label> <input type='radio' name='completed' id='cross' value="0" checked><label>&#10007; not complete</label></td>
+                        </tr>
+                        <tr>
+	                        <td><label>Task's Project ID</label><br><input type='text' name='project_id' value="<?php echo $gvar['id'] ?>" readonly /></td>
+                        </tr>
+                        <tr>
+	                        <td><a style='text-decoration:none' href="<?php echo $_SERVER['PHP_SELF'] ?>"><font style="font-weight:bold">&#10007;</font> cancel</a> <input type='submit' name='submit' value='add'/></td>
+	                    </tr>
+	                    </form>
+	                <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
