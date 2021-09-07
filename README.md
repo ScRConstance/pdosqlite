@@ -7,6 +7,6 @@ Knowledge:
 
 http://vlien.cf/app/pdosqlite/
 
-![Data listing](http://vlien.cf/app/pdosqlite/screenshot/Screenshot_2021-09-07_10-43-28.png)
+![Data listing](screenshot/Screenshot_2021-09-07_10-43-28.png)
 
-![Data editing](http://vlien.cf/app/pdosqlite/screenshot/Screenshot_2021-09-07_10-45-30.png)
+![Data editing](screenshot/Screenshot_2021-09-07_10-45-30.png)
