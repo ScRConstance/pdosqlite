@@ -1,5 +1,6 @@
 # pdosqlite
 Sample of PHP PDO SQLite database management
+
 Knowledge:
 - OOP
 - Composer/Autoload
